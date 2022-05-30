@@ -4,7 +4,9 @@
   "description": "This is the quickest way to see yourself. Lightweight and always available.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": "https://github.com/gloomyzerg/webcam-mirror",
   "keywords": [
@@ -15,9 +17,45 @@
   "author": "Kwazii",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "electron": "^19.0.0"
   },
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "webcamjs": "^1.0.26"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "webcam mirror",
+        "icon": "./icon/webcam.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "webcam mirror"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
