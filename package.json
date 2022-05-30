@@ -1,0 +1,23 @@
+{
+  "name": "webcam mirror",
+  "version": "1.0.0",
+  "description": "This is the quickest way to see yourself. Lightweight and always available.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/gloomyzerg/webcam-mirror",
+  "keywords": [
+    "Electron",
+    "webcam",
+    "camera"
+  ],
+  "author": "Kwazii",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.0"
+  },
+  "dependencies": {
+    "webcamjs": "^1.0.26"
+  }
+}
